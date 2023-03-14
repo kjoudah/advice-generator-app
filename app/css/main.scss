@@ -1,0 +1,77 @@
+@use "reset.scss";
+@use "colors.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+
+body {
+  font-family: "Manrope", sans-serif;
+  background: var(--accent-dark-blue);
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  margin: 1rem;
+}
+
+.advice-generator-card {
+  background: var(--accent-grayish-blue-600);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  height: 100%;
+  min-width: 22em;
+  max-width: 35em;
+}
+
+.advice-header {
+  font-size: 0.8rem;
+  color: var(--primary-green);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.advice-content {
+  color: var(--primary-cyan);
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.advice-content::before {
+  content: open-quote;
+}
+
+.advice-content::after {
+  content: close-quote;
+}
+
+img {
+  margin-inline: auto;
+  margin-bottom: 2rem;
+}
+
+.generate-advice-button {
+  cursor: pointer;
+  position: absolute;
+  background: url(../../images/icon-dice.svg) no-repeat;
+  width: 75px;
+  height: 75px;
+  background-color: var(--primary-green);
+  border-radius: 50%;
+  border: transparent;
+  background-position: center center;
+  margin-inline: auto;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &:hover {
+    filter: drop-shadow(0 0 1rem var(--primary-green));
+  }
+
+  &:active {
+    background-color: var(--primary-cyan);
+  }
+}

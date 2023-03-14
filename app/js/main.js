@@ -10,11 +10,13 @@ generateAdviceButton.addEventListener("click", async () => {
     let advice = body.slip.advice;
     let id = body.slip.id;
 
-    adviceId.innerHTML = id;
-    adviceContent.innerHTML = advice;
-
-    console.log(advice);
+    if (id) {
+      adviceId.innerHTML = id;
+    }
+    if (advice) {
+      adviceContent.innerHTML = advice;
+    }
   } catch (error) {
-    // error handling goes here
+    adviceContent.innerHTML = "Sometimes, errors are a good thing!";
   }
 });
